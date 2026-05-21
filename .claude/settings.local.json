@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start *)",
+      "PowerShell(Copy-Item *)",
+      "Bash(Copy-Item *)",
+      "Bash(python3 -c ' *)",
+      "Bash(node *)",
+      "Bash(python3 *)",
+      "PowerShell(Set-Content *)"
+    ]
+  }
+}

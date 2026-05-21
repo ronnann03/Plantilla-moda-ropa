@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80" role="img" aria-label="Devioz">
+  <defs>
+
+    <!-- Gradiente principal del ícono: verde oscuro → teal vibrante -->
+    <linearGradient id="dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#072E28"/>
+      <stop offset="40%"  stop-color="#0D6B5E"/>
+      <stop offset="100%" stop-color="#28C4B2"/>
+    </linearGradient>
+
+    <!-- Gradiente de cara secundaria (brillo superior) -->
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#3ADECE" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#28C4B2" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <!-- Gradiente del texto -->
+    <linearGradient id="txtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#0B3D36"/>
+      <stop offset="100%" stop-color="#072E28"/>
+    </linearGradient>
+
+    <!-- Glow teal alrededor del ícono -->
+    <filter id="iconGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#28C4B2" flood-opacity="0.45" result="glowColor"/>
+      <feComposite in="glowColor" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glow sutil para el diamante central -->
+    <filter id="diamondGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5" result="blur"/>
+      <feFlood flood-color="#5EF0E0" flood-opacity="0.55" result="gc"/>
+      <feComposite in="gc" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Sombra suave del texto -->
+    <filter id="txtShadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#0D6B5E" flood-opacity="0.25"/>
+    </filter>
+
+  </defs>
+
+  <!-- ───── ÍCONO D ───── -->
+
+  <!-- Halo exterior (atmospheric glow) -->
+  <path d="M 9,5  L 9,75  L 37,75 L 62,59 L 70,40 L 62,21 L 37,5  Z
+           M 22,19 L 22,61 L 37,61 L 55,50 L 59,40 L 55,30 L 37,19 Z"
+        fill="#28C4B2" fill-rule="evenodd" opacity="0.10"
+        transform="translate(-2,-2) scale(1.06)"/>
+
+  <!-- D principal con gradiente y glow -->
+  <path d="M 9,5  L 9,75  L 37,75 L 62,59 L 70,40 L 62,21 L 37,5  Z
+           M 22,19 L 22,61 L 37,61 L 55,50 L 59,40 L 55,30 L 37,19 Z"
+        fill="url(#dGrad)" fill-rule="evenodd" filter="url(#iconGlow)"/>
+
+  <!-- Highlight: cara superior (luz tocando el borde de arriba del D) -->
+  <path d="M 22,19 L 37,19 L 37,5 L 22,5 Z" fill="url(#faceGrad)"/>
+
+  <!-- Highlight: columna izquierda (spine) -->
+  <rect x="9" y="5" width="7" height="70" rx="2" fill="url(#faceGrad)"/>
+
+  <!-- Diamante central (esencia original) — 3 capas para profundidad -->
+  <path d="M 40,29 L 51,40 L 40,51 L 29,40 Z"
+        fill="#1ABFAF" opacity="0.30" filter="url(#diamondGlow)"/>
+  <path d="M 40,32 L 49,40 L 40,48 L 31,40 Z"
+        fill="#3ADECE" opacity="0.55" filter="url(#diamondGlow)"/>
+  <path d="M 40,36 L 45,40 L 40,44 L 35,40 Z"
+        fill="#7AF4E8" opacity="0.70"/>
+
+  <!-- Línea de brillo en el vértice derecho -->
+  <line x1="70" y1="40" x2="59" y2="30" stroke="#5EF0E0" stroke-width="1.2" stroke-opacity="0.35" stroke-linecap="round"/>
+  <line x1="70" y1="40" x2="59" y2="50" stroke="#5EF0E0" stroke-width="1.2" stroke-opacity="0.20" stroke-linecap="round"/>
+
+  <!-- ───── TEXTO DEVIOZ ───── -->
+
+  <!-- Sombra del texto (capa decorativa) -->
+  <text x="89" y="55"
+        font-family="'Segoe UI', 'Helvetica Neue', 'Arial Black', Arial, sans-serif"
+        font-size="33" font-weight="800"
+        fill="#28C4B2" opacity="0.12"
+        letter-spacing="5"
+        transform="translate(1,2)">DEVIOZ</text>
+
+  <!-- Texto principal -->
+  <text x="89" y="55"
+        font-family="'Segoe UI', 'Helvetica Neue', 'Arial Black', Arial, sans-serif"
+        font-size="33" font-weight="800"
+        fill="url(#txtGrad)"
+        letter-spacing="5"
+        filter="url(#txtShadow)">DEVIOZ</text>
+
+  <!-- Línea de acento bajo el texto -->
+  <rect x="89" y="61" width="178" height="2" rx="1" fill="url(#dGrad)" opacity="0.35"/>
+
+</svg>

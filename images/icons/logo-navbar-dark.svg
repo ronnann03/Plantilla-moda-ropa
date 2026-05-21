@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 66" width="240" height="66" role="img" aria-label="Devioz">
+  <defs>
+    <linearGradient id="ig" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0D6B5E"/>
+      <stop offset="60%"  stop-color="#28C4B2"/>
+      <stop offset="100%" stop-color="#5EF0E0"/>
+    </linearGradient>
+    <linearGradient id="hl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#5EF0E0" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#28C4B2" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="glow" x="-22%" y="-22%" width="144%" height="144%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="b"/>
+      <feFlood flood-color="#28C4B2" flood-opacity="0.50" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dg" x="-65%" y="-65%" width="230%" height="230%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5" result="b"/>
+      <feFlood flood-color="#8FFAF2" flood-opacity="0.70" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- halo atmosférico -->
+  <path d="M 5,3 L 5,63 L 33,63 L 57,49 L 65,33 L 57,17 L 33,3 Z
+           M 19,16 L 19,50 L 33,50 L 50,40 L 54,33 L 50,26 L 33,16 Z"
+        fill="#28C4B2" fill-rule="evenodd" opacity="0.14"
+        transform="translate(-2,-2) scale(1.06)"/>
+
+  <!-- ícono D principal -->
+  <path d="M 5,3 L 5,63 L 33,63 L 57,49 L 65,33 L 57,17 L 33,3 Z
+           M 19,16 L 19,50 L 33,50 L 50,40 L 54,33 L 50,26 L 33,16 Z"
+        fill="url(#ig)" fill-rule="evenodd" filter="url(#glow)"/>
+
+  <!-- brillo spine -->
+  <rect x="5" y="3" width="6" height="60" rx="2" fill="url(#hl)"/>
+  <path d="M 19,16 L 33,16 L 33,3 L 19,3 Z" fill="url(#hl)"/>
+
+  <!-- diamante central -->
+  <path d="M 33,23 L 45,33 L 33,43 L 21,33 Z" fill="#28C4B2" opacity="0.30" filter="url(#dg)"/>
+  <path d="M 33,27 L 42,33 L 33,39 L 24,33 Z" fill="#5EF0E0" opacity="0.62" filter="url(#dg)"/>
+  <path d="M 33,30 L 37,33 L 33,36 L 29,33 Z" fill="#ADFAF5" opacity="0.90"/>
+
+  <!-- destellos -->
+  <line x1="65" y1="33" x2="54" y2="26" stroke="#8FFAF2" stroke-width="1.2" stroke-opacity="0.38" stroke-linecap="round"/>
+  <line x1="65" y1="33" x2="54" y2="40" stroke="#8FFAF2" stroke-width="1.2" stroke-opacity="0.22" stroke-linecap="round"/>
+
+  <!-- texto — blanco cálido para fondos oscuros -->
+  <text x="82" y="44"
+        font-family="'Segoe UI','Helvetica Neue','Arial Black',Arial,sans-serif"
+        font-size="29" font-weight="800"
+        fill="#EFF8F7" letter-spacing="3.5">DEVIOZ</text>
+
+  <!-- línea de acento -->
+  <rect x="82" y="51" width="152" height="1.8" rx="1" fill="url(#ig)" opacity="0.40"/>
+</svg>

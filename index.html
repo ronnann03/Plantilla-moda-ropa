@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿﻿<!DOCTYPE html>
+<html lang="es">
 <head>
-	<title>Home</title>
+	<title>Inicio</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
+	<link rel="icon" type="image/svg+xml" href="images/icons/favicon.svg"/>
 	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -45,24 +46,25 @@
 			<div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
 					<div class="left-top-bar">
-						Free shipping for standard order over $100
+						<i class="fa fa-truck"></i>
+						Envío gratis por compras mayores a S/ 199
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
+						<a href="#contacto" class="flex-c-m trans-04 p-lr-25">
+							Ayuda y FAQ
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							My Account
+						<a href="#productos" class="flex-c-m trans-04 p-lr-25">
+							Mi cuenta
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
+						<a href="#" class="flex-c-m trans-04 p-lr-25 js-noop">
+							ES
 						</a>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
+						<a href="#" class="flex-c-m trans-04 p-lr-25 js-noop">
+							PEN
 						</a>
 					</div>
 				</div>
@@ -72,40 +74,35 @@
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+					<a href="#inicio" class="logo">
+						<img src="images/icons/logo-devioz-v2.png" alt="Devioz">
 					</a>
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href="index.html">Home</a>
-								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
-								</ul>
+								<a href="#inicio">Inicio</a>
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="#productos">Tienda</a>
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="shoping-cart.html">Features</a>
+								<a href="#" class="js-show-cart">Carrito</a>
 							</li>
 
 							<li>
-								<a href="blog.html">Blog</a>
+								<a href="#blog">Blog</a>
 							</li>
 
 							<li>
-								<a href="about.html">About</a>
+								<a href="#nosotros">Nosotros</a>
 							</li>
 
 							<li>
-								<a href="contact.html">Contact</a>
+								<a href="#contacto">Contacto</a>
 							</li>
 						</ul>
 					</div>	
@@ -120,7 +117,7 @@
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
 
-						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-noop" data-notify="0">
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
 					</div>
@@ -132,7 +129,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="#inicio"><img src="images/icons/logo-devioz-v2.png" alt="Devioz"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -164,26 +161,27 @@
 			<ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">
-						Free shipping for standard order over $100
+						<i class="fa fa-truck"></i>
+						Envío gratis por compras mayores a S/ 199
 					</div>
 				</li>
 
 				<li>
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Help & FAQs
+						<a href="#contacto" class="flex-c-m p-lr-10 trans-04">
+							Ayuda y FAQ
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							My Account
+						<a href="#productos" class="flex-c-m p-lr-10 trans-04">
+							Mi cuenta
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							EN
+						<a href="#" class="flex-c-m p-lr-10 trans-04 js-noop">
+							ES
 						</a>
 
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
+						<a href="#" class="flex-c-m p-lr-10 trans-04 js-noop">
+							PEN
 						</a>
 					</div>
 				</li>
@@ -191,35 +189,30 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
-					<ul class="sub-menu-m">
-						<li><a href="index.html">Homepage 1</a></li>
-						<li><a href="home-02.html">Homepage 2</a></li>
-						<li><a href="home-03.html">Homepage 3</a></li>
-					</ul>
+					<a href="#inicio">Inicio</a>
 					<span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</span>
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="#productos">Tienda</a>
 				</li>
 
 				<li>
-					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="#" class="label1 rs1 js-show-cart" data-label1="hot">Carrito</a>
 				</li>
 
 				<li>
-					<a href="blog.html">Blog</a>
+					<a href="#blog">Blog</a>
 				</li>
 
 				<li>
-					<a href="about.html">About</a>
+					<a href="#nosotros">Nosotros</a>
 				</li>
 
 				<li>
-					<a href="contact.html">Contact</a>
+					<a href="#contacto">Contacto</a>
 				</li>
 			</ul>
 		</div>
@@ -228,14 +221,14 @@
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
 				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
+					<img src="images/icons/icon-close2.png" alt="CERRAR">
 				</button>
 
 				<form class="wrap-search-header flex-w p-l-15">
 					<button class="flex-c-m trans-04">
 						<i class="zmdi zmdi-search"></i>
 					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
+					<input class="plh3" type="text" name="search" placeholder="Buscar...">
 				</form>
 			</div>
 		</div>
@@ -248,7 +241,7 @@
 		<div class="header-cart flex-col-l p-l-65 p-r-25">
 			<div class="header-cart-title flex-w flex-sb-m p-b-8">
 				<span class="mtext-103 cl2">
-					Your Cart
+					Tu carrito
 				</span>
 
 				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
@@ -265,7 +258,7 @@
 
 						<div class="header-cart-item-txt p-t-8">
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
+								Camisa Blanca Plegada
 							</a>
 
 							<span class="header-cart-item-info">
@@ -281,7 +274,7 @@
 
 						<div class="header-cart-item-txt p-t-8">
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Converse All Star
+								Zapatillas Urbanas
 							</a>
 
 							<span class="header-cart-item-info">
@@ -297,7 +290,7 @@
 
 						<div class="header-cart-item-txt p-t-8">
 							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Nixon Porter Leather
+								Cartera de Cuero
 							</a>
 
 							<span class="header-cart-item-info">
@@ -309,16 +302,16 @@
 				
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Total: $75.00
+						Total: S/ 75.00
 					</div>
 
 					<div class="header-cart-buttons flex-w w-full">
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-							View Cart
+						<a href="#productos" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10 js-hide-cart">
+							Ver carrito
 						</a>
 
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-							Check Out
+						<a href="#productos" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10 js-hide-cart">
+							Finalizar compra
 						</a>
 					</div>
 				</div>
@@ -329,7 +322,7 @@
 		
 
 	<!-- Slider -->
-	<section class="section-slide">
+	<section class="section-slide" id="inicio">
 		<div class="wrap-slick1">
 			<div class="slick1">
 				<div class="item-slick1" style="background-image: url(images/slide-01.jpg);">
@@ -337,19 +330,19 @@
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Women Collection 2018
+									Colección Mujer 2018
 								</span>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									NEW SEASON
+									NUEVA TEMPORADA
 								</h2>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
+								<a href="#productos" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04" data-isotope-filter=".women">
+									Comprar ahora
 								</a>
 							</div>
 						</div>
@@ -361,19 +354,19 @@
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Men New-Season
+									Hombre nueva temporada
 								</span>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									Jackets & Coats
+									Chaquetas y abrigos
 								</h2>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
+								<a href="#productos" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04" data-isotope-filter=".men">
+									Comprar ahora
 								</a>
 							</div>
 						</div>
@@ -385,19 +378,19 @@
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Men Collection 2018
+									Colección Hombre 2018
 								</span>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									New arrivals
+									Nuevos ingresos
 								</h2>
 							</div>
 								
 							<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-								<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
+								<a href="#productos" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04" data-isotope-filter=".men">
+									Comprar ahora
 								</a>
 							</div>
 						</div>
@@ -409,121 +402,298 @@
 
 
 	<!-- Banner -->
-	<div class="sec-banner bg0 p-t-80 p-b-50">
+	<div class="sec-banner bg0 p-t-80 p-b-50" id="categorias">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
+			<div class="row justify-content-center">
+
+				<div class="col-md-6 col-xl-4 p-b-30">
+					<!-- Block1 — Mujer -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-01.jpg" alt="IMG-BANNER">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<img src="images/banner-01.jpg" alt="Moda Mujer">
+						<a href="#productos" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" data-isotope-filter=".women">
 							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Women
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									Spring 2018
-								</span>
+								<span class="block1-name ltext-102 trans-04 p-b-8">Mujer</span>
+								<span class="block1-info stext-102 trans-04">Nueva temporada</span>
 							</div>
-
 							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
+								<div class="block1-link stext-101 cl0 trans-09">Comprar ahora</div>
 							</div>
 						</a>
 					</div>
 				</div>
 
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
+				<div class="col-md-6 col-xl-4 p-b-30">
+					<!-- Block1 — Hombre -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-02.jpg" alt="IMG-BANNER">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<img src="images/banner-02.jpg" alt="Moda Hombre">
+						<a href="#productos" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" data-isotope-filter=".men">
 							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Men
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									Spring 2018
-								</span>
+								<span class="block1-name ltext-102 trans-04 p-b-8">Hombre</span>
+								<span class="block1-info stext-102 trans-04">Estilos actuales</span>
 							</div>
-
 							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
+								<div class="block1-link stext-101 cl0 trans-09">Comprar ahora</div>
 							</div>
 						</a>
 					</div>
 				</div>
 
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
+				<div class="col-md-6 col-xl-4 p-b-30">
+					<!-- Block1 — Bolsos -->
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-03.jpg" alt="IMG-BANNER">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<img src="images/gallery-07.jpg" alt="Bolsos">
+						<a href="#productos" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" data-isotope-filter=".bag">
 							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Accessories
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									New Trend
-								</span>
+								<span class="block1-name ltext-102 trans-04 p-b-8">Bolsos</span>
+								<span class="block1-info stext-102 trans-04">Diseños únicos</span>
 							</div>
-
 							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
+								<div class="block1-link stext-101 cl0 trans-09">Comprar ahora</div>
 							</div>
 						</a>
 					</div>
 				</div>
+
+				<div class="col-md-6 col-xl-4 p-b-30">
+					<!-- Block1 — Calzado -->
+					<div class="block1 wrap-pic-w">
+						<img src="images/gallery-04.jpg" alt="Calzado">
+						<a href="#productos" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" data-isotope-filter=".shoes">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">Calzado</span>
+								<span class="block1-info stext-102 trans-04">Nuevos modelos</span>
+							</div>
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">Comprar ahora</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-xl-4 p-b-30">
+					<!-- Block1 — Accesorios -->
+					<div class="block1 wrap-pic-w">
+						<img src="images/banner-03.jpg" alt="Accesorios">
+						<a href="#productos" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" data-isotope-filter=".watches">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8">Accesorios</span>
+								<span class="block1-info stext-102 trans-04">Edición especial</span>
+							</div>
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">Comprar ahora</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
 
 
+	<section class="about-premium" id="nosotros">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 p-b-30" data-reveal data-delay="0">
+					<div class="about-premium-eyebrow">
+						<span class="about-chip">
+							<i class="zmdi zmdi-flash"></i>
+							Streetwear premium
+						</span>
+						<span class="about-chip about-chip--muted">Editorial aesthetic</span>
+					</div>
+					<h2 class="about-premium-title">
+						Moda urbana con identidad. Sin ruido.
+					</h2>
+					<p class="about-premium-subtitle">
+						Piezas minimalistas, actitud moderna y acabados que se sienten premium. Vestite con intención. Mostrate auténtico.
+					</p>
+
+					<div class="glass-card about-quote" data-reveal data-delay="120">
+						<div class="about-quote-icon">
+							<i class="zmdi zmdi-quote"></i>
+						</div>
+						<div class="about-quote-text">
+							<div class="about-quote-line">“La tendencia cambia. El estilo se sostiene.”</div>
+							<div class="about-quote-line about-quote-line--muted">Autenticidad por encima de todo.</div>
+						</div>
+					</div>
+
+					<div class="about-premium-cta" data-reveal data-delay="200">
+						<a href="#productos" class="btn-premium" data-isotope-filter="*">Ver colección</a>
+						<a href="#contacto" class="btn-premium btn-premium--ghost">Conversemos</a>
+					</div>
+				</div>
+
+				<div class="col-lg-6 p-b-30" data-reveal data-delay="80">
+					<div class="about-media-grid">
+						<div class="about-media glass-card">
+							<img src="images/about-01.jpg" alt="Lifestyle urbano">
+							<div class="about-media-overlay">
+								<div class="about-media-kicker">Cinematic lighting</div>
+								<div class="about-media-title">Hecho para la calle</div>
+							</div>
+						</div>
+						<div class="about-media glass-card">
+							<img src="images/about-02.jpg" alt="Equipo creativo">
+							<div class="about-media-overlay">
+								<div class="about-media-kicker">Clean UI</div>
+								<div class="about-media-title">Detalle y carácter</div>
+							</div>
+						</div>
+						<div class="about-media about-media--wide glass-card">
+							<img src="images/blog-01.jpg" alt="Editorial fashion">
+							<div class="about-media-overlay">
+								<div class="about-media-kicker">Fashion luxury</div>
+								<div class="about-media-title">Minimalismo premium</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row p-t-30">
+				<div class="col-lg-6 p-b-30" data-reveal data-delay="0">
+					<div class="glass-card about-card">
+						<div class="about-card-head">
+							<i class="zmdi zmdi-city-alt"></i>
+							<h3 class="about-card-title">Historia</h3>
+						</div>
+						<p class="about-card-text">
+							Nacimos entre la inspiración editorial y la energía de la calle. Nuestra idea fue clara: una marca urbana que se vea internacional, se sienta premium y hable con honestidad.
+						</p>
+						<p class="about-card-text">
+							Creemos en prendas que acompañan tu ritmo: siluetas limpias, materiales con presencia y una estética que no necesita gritar para destacar.
+						</p>
+						<div class="about-inspo">
+							<span class="about-inspo-pill"><i class="zmdi zmdi-check-circle"></i> Calidad real</span>
+							<span class="about-inspo-pill"><i class="zmdi zmdi-check-circle"></i> Identidad</span>
+							<span class="about-inspo-pill"><i class="zmdi zmdi-check-circle"></i> Versatilidad</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6 p-b-30">
+					<div class="row">
+						<div class="col-md-6 p-b-30" data-reveal data-delay="80">
+							<div class="glass-card about-card about-card--compact">
+								<div class="about-card-head">
+									<i class="zmdi zmdi-flag"></i>
+									<h3 class="about-card-title">Misión</h3>
+								</div>
+								<p class="about-card-text">
+									Crear streetwear premium minimalista que eleve tu estilo diario con autenticidad y confianza.
+								</p>
+							</div>
+						</div>
+						<div class="col-md-6 p-b-30" data-reveal data-delay="140">
+							<div class="glass-card about-card about-card--compact">
+								<div class="about-card-head">
+									<i class="zmdi zmdi-eye"></i>
+									<h3 class="about-card-title">Visión</h3>
+								</div>
+								<p class="about-card-text">
+									Ser una marca urbana internacional, reconocida por diseño limpio, calidad y cultura.
+								</p>
+							</div>
+						</div>
+						<div class="col-md-12" data-reveal data-delay="200">
+							<div class="glass-card about-card about-card--compact">
+								<div class="about-card-head">
+									<i class="zmdi zmdi-fire"></i>
+									<h3 class="about-card-title">Valores</h3>
+								</div>
+								<div class="about-values">
+									<div class="about-value">
+										<i class="zmdi zmdi-shield-check"></i>
+										<div class="about-value-title">Confianza</div>
+										<div class="about-value-desc">Transparencia y consistencia en cada entrega.</div>
+									</div>
+									<div class="about-value">
+										<i class="zmdi zmdi-cutlery"></i>
+										<div class="about-value-title">Detalle</div>
+										<div class="about-value-desc">Acabados limpios, fit pensado y materiales con presencia.</div>
+									</div>
+									<div class="about-value">
+										<i class="zmdi zmdi-face"></i>
+										<div class="about-value-title">Autenticidad</div>
+										<div class="about-value-desc">Diseño con identidad propia, sin copiar.</div>
+									</div>
+									<div class="about-value">
+										<i class="zmdi zmdi-trending-up"></i>
+										<div class="about-value-title">Evolución</div>
+										<div class="about-value-desc">Mejora constante, colecciones con propósito.</div>
+									</div>
+								</div>
+								<div class="about-inspire">
+									<div class="about-inspire-line">“Vestirse bien es respetarse.”</div>
+									<div class="about-inspire-line">“La calle inspira. La calidad permanece.”</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row p-t-10">
+				<div class="col-12" data-reveal data-delay="0">
+					<div class="about-stats glass-card">
+						<div class="about-stat">
+							<div class="about-stat-number about-counter" data-count="12800" data-suffix="+">0</div>
+							<div class="about-stat-label">Clientes</div>
+						</div>
+						<div class="about-stat">
+							<div class="about-stat-number about-counter" data-count="54000" data-suffix="+">0</div>
+							<div class="about-stat-label">Prendas vendidas</div>
+						</div>
+						<div class="about-stat">
+							<div class="about-stat-number about-counter" data-count="7600" data-suffix="+">0</div>
+							<div class="about-stat-label">Pedidos</div>
+						</div>
+						<div class="about-stat">
+							<div class="about-stat-number about-counter" data-count="12">0</div>
+							<div class="about-stat-label">Países</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 	<!-- Product -->
-	<section class="bg0 p-t-23 p-b-140">
+	<section class="bg0 p-t-23 p-b-140" id="productos">
 		<div class="container">
 			<div class="p-b-10">
 				<h3 class="ltext-103 cl5">
-					Product Overview
+					Catálogo de productos
 				</h3>
 			</div>
 
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-						All Products
+						Todos
 					</button>
 
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-						Women
+						Mujer
 					</button>
 
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
-						Men
+						Hombre
 					</button>
 
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
-						Bag
+						Bolsos
 					</button>
 
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".shoes">
-						Shoes
+						Calzado
 					</button>
 
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".watches">
-						Watches
+						Accesorios
 					</button>
 				</div>
 
@@ -531,13 +701,13 @@
 					<div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
 						<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
 						<i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-						 Filter
+						 Filtrar
 					</div>
 
 					<div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
 						<i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
 						<i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-						Search
+						Buscar
 					</div>
 				</div>
 				
@@ -548,7 +718,7 @@
 							<i class="zmdi zmdi-search"></i>
 						</button>
 
-						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Search">
+						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Buscar">
 					</div>	
 				</div>
 
@@ -557,43 +727,43 @@
 					<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
 						<div class="filter-col1 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
-								Sort By
+								Ordenar por
 							</div>
 
 							<ul>
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Default
+										Predeterminado
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Popularity
+										Popularidad
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Average rating
+										Calificación promedio
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										Newness
+										Novedades
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Price: Low to High
+										Precio: menor a mayor
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										Price: High to Low
+										Precio: mayor a menor
 									</a>
 								</li>
 							</ul>
@@ -601,43 +771,43 @@
 
 						<div class="filter-col2 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
-								Price
+								Precio
 							</div>
 
 							<ul>
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										All
+										Todo
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$0.00 - $50.00
+										S/ 0.00 - S/ 50.00
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$50.00 - $100.00
+										S/ 50.00 - S/ 100.00
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$100.00 - $150.00
+										S/ 100.00 - S/ 150.00
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$150.00 - $200.00
+										S/ 150.00 - S/ 200.00
 									</a>
 								</li>
 
 								<li class="p-b-6">
 									<a href="#" class="filter-link stext-106 trans-04">
-										$200.00+
+										S/ 200.00+
 									</a>
 								</li>
 							</ul>
@@ -655,7 +825,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										Black
+										Negro
 									</a>
 								</li>
 
@@ -665,7 +835,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
-										Blue
+										Azul
 									</a>
 								</li>
 
@@ -675,7 +845,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										Grey
+										Gris
 									</a>
 								</li>
 
@@ -685,7 +855,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										Green
+										Verde
 									</a>
 								</li>
 
@@ -695,7 +865,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										Red
+										Rojo
 									</a>
 								</li>
 
@@ -705,7 +875,7 @@
 									</span>
 
 									<a href="#" class="filter-link stext-106 trans-04">
-										White
+										Blanco
 									</a>
 								</li>
 							</ul>
@@ -713,16 +883,16 @@
 
 						<div class="filter-col4 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">
-								Tags
+								Etiquetas
 							</div>
 
 							<div class="flex-w p-t-4 m-r--5">
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Fashion
+									Moda
 								</a>
 
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Lifestyle
+									Estilo de vida
 								</a>
 
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
@@ -730,11 +900,11 @@
 								</a>
 
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Streetstyle
+									Urbano
 								</a>
 
 								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Crafts
+									Artesanal
 								</a>
 							</div>
 						</div>
@@ -742,7 +912,7 @@
 				</div>
 			</div>
 
-			<div class="row isotope-grid">
+			<div class="row isotope-grid" style="margin-right:-15px; margin-left:-15px;">
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<!-- Block2 -->
 					<div class="block2">
@@ -750,13 +920,13 @@
 							<img src="images/product-01.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Esprit Ruffle Shirt
 								</a>
 
@@ -782,13 +952,13 @@
 							<img src="images/product-02.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Herschel supply
 								</a>
 
@@ -814,13 +984,13 @@
 							<img src="images/product-03.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Only Check Trouser
 								</a>
 
@@ -846,13 +1016,13 @@
 							<img src="images/product-04.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Classic Trench Coat
 								</a>
 
@@ -878,50 +1048,18 @@
 							<img src="images/product-05.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Front Pocket Jumper
 								</a>
 
 								<span class="stext-105 cl3">
 									$34.75
-								</span>
-							</div>
-
-							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
-					<!-- Block2 -->
-					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<img src="images/product-06.jpg" alt="IMG-PRODUCT">
-
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
-						</div>
-
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Vintage Inspired Classic 
-								</a>
-
-								<span class="stext-105 cl3">
-									$93.20
 								</span>
 							</div>
 
@@ -942,13 +1080,13 @@
 							<img src="images/product-07.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Shirt in Stretch Cotton
 								</a>
 
@@ -974,50 +1112,18 @@
 							<img src="images/product-08.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Pieces Metallic Printed
 								</a>
 
 								<span class="stext-105 cl3">
 									$18.96
-								</span>
-							</div>
-
-							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
-					<!-- Block2 -->
-					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<img src="images/product-09.jpg" alt="IMG-PRODUCT">
-
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
-						</div>
-
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Converse All Star Hi Plimsolls
-								</a>
-
-								<span class="stext-105 cl3">
-									$75.00
 								</span>
 							</div>
 
@@ -1038,13 +1144,13 @@
 							<img src="images/product-10.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Femme T-Shirt In Stripe
 								</a>
 
@@ -1070,13 +1176,13 @@
 							<img src="images/product-11.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Herschel supply 
 								</a>
 
@@ -1102,13 +1208,13 @@
 							<img src="images/product-12.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Herschel supply
 								</a>
 
@@ -1134,13 +1240,13 @@
 							<img src="images/product-13.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									T-Shirt with Sleeve
 								</a>
 
@@ -1166,50 +1272,18 @@
 							<img src="images/product-14.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Pretty Little Thing
 								</a>
 
 								<span class="stext-105 cl3">
 									$54.79
-								</span>
-							</div>
-
-							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
-					<!-- Block2 -->
-					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<img src="images/product-15.jpg" alt="IMG-PRODUCT">
-
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
-							</a>
-						</div>
-
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									Mini Silver Mesh Watch
-								</a>
-
-								<span class="stext-105 cl3">
-									$86.85
 								</span>
 							</div>
 
@@ -1230,13 +1304,13 @@
 							<img src="images/product-16.jpg" alt="IMG-PRODUCT">
 
 							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-								Quick View
+								Vista rápida
 							</a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 									Square Neck Back
 								</a>
 
@@ -1254,13 +1328,635 @@
 						</div>
 					</div>
 				</div>
+				<!-- Bolsos -->
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-07.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Camisa Oxford Slim
+								</a>
+
+								<span class="stext-105 cl3">
+									$59.90
+								</span>
+							</div>
+
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
+					<!-- Block2 -->
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-08.jpg" alt="IMG-PRODUCT">
+
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Casaca Denim Clásica
+								</a>
+
+								<span class="stext-105 cl3">
+									$89.90
+								</span>
+							</div>
+
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bag">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/gallery-07.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Bolso Tote de Lona
+								</a>
+								<span class="stext-105 cl3">$39.90</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bag">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/gallery-01.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Cartera de Cuero Clásica
+								</a>
+								<span class="stext-105 cl3">$48.50</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bag">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/gallery-05.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Mochila Casual Mujer
+								</a>
+								<span class="stext-105 cl3">$55.30</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item bag">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/gallery-03.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Bolso Bandolera Urbano
+								</a>
+								<span class="stext-105 cl3">$62.00</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Calzado adicional -->
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/gallery-02.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Sneakers Clásicos Blancos
+								</a>
+								<span class="stext-105 cl3">$58.00</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/gallery-04.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Botines de Cuero Negro
+								</a>
+								<span class="stext-105 cl3">$72.50</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-09.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Zapatillas Urbanas Hi Plimsolls
+								</a>
+								<span class="stext-105 cl3">$75.00</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/gallery-06.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Zapatillas Running Pro
+								</a>
+								<span class="stext-105 cl3">$84.00</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/gallery-08.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Zapatos Oxford Hombre
+								</a>
+								<span class="stext-105 cl3">$89.99</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Accesorios adicionales -->
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/thumb-02.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Pañuelo de Seda Estampado
+								</a>
+								<span class="stext-105 cl3">$22.00</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/gallery-09.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Collar Dorado Minimalista
+								</a>
+								<span class="stext-105 cl3">$28.00</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/thumb-03.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Cinturón de Cuero Trenzado
+								</a>
+								<span class="stext-105 cl3">$31.50</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/thumb-01.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Gafas de Sol Retro
+								</a>
+								<span class="stext-105 cl3">$44.00</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-15.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Mini Silver Mesh Watch
+								</a>
+								<span class="stext-105 cl3">$86.85</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="images/product-06.jpg" alt="IMG-PRODUCT">
+							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+								Vista rápida
+							</a>
+						</div>
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="#" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									Vintage Inspired Classic 
+								</a>
+								<span class="stext-105 cl3">$93.20</span>
+							</div>
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
 
-			<!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Load More
-				</a>
+		</div>
+	</section>
+
+
+	<!-- Blog / Novedades -->
+	<section class="blog-section" id="blog">
+		<div class="container">
+
+			<div class="blog-section-head">
+				<div class="blog-section-eyebrow">
+					<span class="blog-eyebrow-chip"><i class="fa fa-newspaper-o"></i> Novedades</span>
+				</div>
+				<h3 class="blog-section-title">Lo último en moda</h3>
+				<p class="blog-section-subtitle">Tendencias, consejos y cultura urbana — todo lo que necesitás saber.</p>
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm-6 col-lg-3 p-b-35">
+					<div class="blog-card">
+						<div class="blog-card-img">
+							<img src="images/blog-01.jpg" alt="Tendencias urbanas">
+							<span class="blog-card-cat">Tendencias</span>
+						</div>
+						<div class="blog-card-body">
+							<div class="blog-card-meta">
+								<i class="fa fa-calendar-o"></i> 18 mayo, 2025
+							</div>
+							<h4 class="blog-card-title">Tendencias urbanas para esta temporada</h4>
+							<p class="blog-card-excerpt">Los colores, siluetas y texturas que van a dominar el street style este año.</p>
+							<a href="#" class="blog-card-link">Leer más <i class="fa fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-35">
+					<div class="blog-card">
+						<div class="blog-card-img">
+							<img src="images/blog-02.jpg" alt="Outfits con básicos">
+							<span class="blog-card-cat">Estilo</span>
+						</div>
+						<div class="blog-card-body">
+							<div class="blog-card-meta">
+								<i class="fa fa-calendar-o"></i> 12 mayo, 2025
+							</div>
+							<h4 class="blog-card-title">Cómo armar outfits top con básicos</h4>
+							<p class="blog-card-excerpt">Piezas clave que te permiten crear looks únicos sin esfuerzo ni complicaciones.</p>
+							<a href="#" class="blog-card-link">Leer más <i class="fa fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-35">
+					<div class="blog-card">
+						<div class="blog-card-img">
+							<img src="images/blog-03.jpg" alt="Cuidado de prendas">
+							<span class="blog-card-cat">Tips</span>
+						</div>
+						<div class="blog-card-body">
+							<div class="blog-card-meta">
+								<i class="fa fa-calendar-o"></i> 5 mayo, 2025
+							</div>
+							<h4 class="blog-card-title">Guía de cuidado para prendas premium</h4>
+							<p class="blog-card-excerpt">Consejos esenciales para que tu ropa dure más y siempre luzca impecable.</p>
+							<a href="#" class="blog-card-link">Leer más <i class="fa fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-35">
+					<div class="blog-card">
+						<div class="blog-card-img">
+							<img src="images/blog-04.jpg" alt="Streetwear">
+							<span class="blog-card-cat">Cultura</span>
+						</div>
+						<div class="blog-card-body">
+							<div class="blog-card-meta">
+								<i class="fa fa-calendar-o"></i> 28 abr, 2025
+							</div>
+							<h4 class="blog-card-title">Streetwear: de la calle a la pasarela</h4>
+							<p class="blog-card-excerpt">Cómo la cultura urbana redefinió las reglas de la moda a nivel mundial.</p>
+							<a href="#" class="blog-card-link">Leer más <i class="fa fa-long-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Contacto -->
+	<section class="p-t-75 p-b-75 contact-section" id="contacto">
+		<div class="container">
+			<div class="p-b-32">
+				<h3 class="ltext-103 contact-heading">Contacto</h3>
+				<p class="stext-107 cl6 p-t-8">¿Tenés una pregunta o querés hacer un pedido? Escribinos, respondemos en menos de 24 h.</p>
+			</div>
+
+			<div class="contact-fashion-img p-b-48">
+				<img src="images/about-01.jpg" alt="Moda Devioz">
+				<div class="contact-fashion-overlay">
+					<span class="contact-fashion-tag">Nueva colección disponible</span>
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- Info de contacto -->
+				<div class="col-md-5 p-b-40">
+					<div class="contact-info-col">
+						<div class="contact-info-item">
+							<div class="contact-info-icon"><i class="zmdi zmdi-map-alt"></i></div>
+							<div>
+								<div class="contact-info-label">Dirección</div>
+								<div class="contact-info-text">Av. Larco 1301, Miraflores, Lima, Perú</div>
+							</div>
+						</div>
+						<div class="contact-info-item">
+							<div class="contact-info-icon"><i class="zmdi zmdi-phone"></i></div>
+							<div>
+								<div class="contact-info-label">Teléfono</div>
+								<div class="contact-info-text">+51 1 234 5678</div>
+							</div>
+						</div>
+						<div class="contact-info-item">
+							<div class="contact-info-icon"><i class="zmdi zmdi-email"></i></div>
+							<div>
+								<div class="contact-info-label">Correo</div>
+								<div class="contact-info-text">hola@cozastore.pe</div>
+							</div>
+						</div>
+						<div class="contact-info-item">
+							<div class="contact-info-icon"><i class="zmdi zmdi-time"></i></div>
+							<div>
+								<div class="contact-info-label">Horario de atención</div>
+								<div class="contact-info-text">Lun – Vie, 9:00 – 18:00</div>
+							</div>
+						</div>
+						<div class="p-t-28">
+							<a href="#" class="fs-20 hov-cl1 trans-04 m-r-16 contact-social-icon"><i class="fa fa-facebook"></i></a>
+							<a href="#" class="fs-20 hov-cl1 trans-04 m-r-16 contact-social-icon"><i class="fa fa-instagram"></i></a>
+							<a href="#" class="fs-20 hov-cl1 trans-04 m-r-16 contact-social-icon"><i class="fa fa-whatsapp"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Formulario -->
+				<div class="col-md-7 p-b-40">
+					<div class="contact-form-col">
+						<form class="contact-form" id="contactForm" novalidate>
+							<div class="row">
+								<div class="col-sm-6 p-b-20">
+									<div class="wrap-input1 validate-input">
+										<input class="input1 stext-107 cl5 plh3 contact-field" type="text" name="name" placeholder="Tu nombre *" required>
+										<div class="focus-input1 trans-04"></div>
+									</div>
+								</div>
+								<div class="col-sm-6 p-b-20">
+									<div class="wrap-input1 validate-input">
+										<input class="input1 stext-107 cl5 plh3 contact-field" type="email" name="email" placeholder="Tu correo *" required>
+										<div class="focus-input1 trans-04"></div>
+									</div>
+								</div>
+							</div>
+							<div class="p-b-20">
+								<div class="wrap-input1">
+									<input class="input1 stext-107 cl5 plh3 contact-field" type="text" name="subject" placeholder="Asunto">
+									<div class="focus-input1 trans-04"></div>
+								</div>
+							</div>
+							<div class="p-b-28">
+								<div class="wrap-input1 validate-input">
+									<textarea class="input1 stext-107 cl5 plh3 contact-field contact-textarea" name="message" placeholder="Tu mensaje *" required></textarea>
+									<div class="focus-input1 trans-04"></div>
+								</div>
+							</div>
+							<div class="flex-w flex-l-m" style="gap:20px; align-items:center;">
+								<button type="submit" class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn2 p-lr-15 trans-04 contact-submit-btn">
+									Enviar mensaje
+								</button>
+								<p class="contact-form-msg stext-107 cl5" style="display:none; margin:0;"></p>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -1270,142 +1966,120 @@
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
+
+				<!-- Logo + descripción + redes -->
 				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Categories
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Help
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
-					</h4>
-
+					<a href="#inicio" class="d-block p-b-20">
+						<img src="images/icons/logo-devioz-v2.png" alt="Devioz" style="height:40px;">
+					</a>
 					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						Moda actual, limpia y fácil de combinar. Prendas que favorecen y duran, pensadas para el día a día.
 					</p>
-
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+					<div class="p-t-20">
+						<a href="#" class="fs-20 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-facebook"></i>
 						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+						<a href="#" class="fs-20 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-instagram"></i>
 						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+						<a href="#" class="fs-20 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fa fa-pinterest-p"></i>
 						</a>
 					</div>
 				</div>
 
+				<!-- Categorías -->
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Newsletter
+						Categorías
 					</h4>
+					<ul>
+						<li class="p-b-10">
+							<a href="#productos" class="stext-107 cl7 hov-cl1 trans-04" data-isotope-filter=".women">Mujer</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#productos" class="stext-107 cl7 hov-cl1 trans-04" data-isotope-filter=".men">Hombre</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#productos" class="stext-107 cl7 hov-cl1 trans-04" data-isotope-filter=".bag">Bolsos</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#productos" class="stext-107 cl7 hov-cl1 trans-04" data-isotope-filter=".shoes">Calzado</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#productos" class="stext-107 cl7 hov-cl1 trans-04" data-isotope-filter=".watches">Accesorios</a>
+						</li>
+					</ul>
+				</div>
 
+				<!-- Ayuda -->
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Ayuda
+					</h4>
+					<ul>
+						<li class="p-b-10">
+							<a href="#contacto" class="stext-107 cl7 hov-cl1 trans-04">Seguir pedido</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#contacto" class="stext-107 cl7 hov-cl1 trans-04">Devoluciones</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#contacto" class="stext-107 cl7 hov-cl1 trans-04">Envíos</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#contacto" class="stext-107 cl7 hov-cl1 trans-04">Preguntas frecuentes</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#contacto" class="stext-107 cl7 hov-cl1 trans-04">Contacto</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Boletín -->
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Boletín
+					</h4>
+					<p class="stext-107 cl7 p-b-15">
+						Suscribite y recibí novedades y ofertas exclusivas directo en tu correo.
+					</p>
 					<form>
 						<div class="wrap-input1 w-full p-b-4">
 							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
 							<div class="focus-input1 trans-04"></div>
 						</div>
-
 						<div class="p-t-18">
 							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Subscribe
+								Suscribirse
 							</button>
 						</div>
 					</form>
 				</div>
 			</div>
 
-			<div class="p-t-40">
+			<!-- Barra inferior -->
+			<div class="p-t-32" style="border-top: 1px solid rgba(255,255,255,0.08);">
 				<div class="flex-c-m flex-w p-b-18">
 					<a href="#" class="m-all-1">
 						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
 					</a>
-
 					<a href="#" class="m-all-1">
 						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
 					</a>
-
 					<a href="#" class="m-all-1">
 						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
 					</a>
-
 					<a href="#" class="m-all-1">
 						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
 					</a>
-
 					<a href="#" class="m-all-1">
 						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
 					</a>
 				</div>
 
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
+					&copy; <script>document.write(new Date().getFullYear());</script> Cozastore — Todos los derechos reservados.
 				</p>
 			</div>
 		</div>
@@ -1495,11 +2169,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 									<div class="size-204 respon6-next">
 										<div class="rs1-select2 bor8 bg0">
 											<select class="js-select2" name="time">
-												<option>Choose an option</option>
-												<option>Size S</option>
-												<option>Size M</option>
-												<option>Size L</option>
-												<option>Size XL</option>
+												<option>Elige una opción</option>
+												<option>Talla S</option>
+												<option>Talla M</option>
+												<option>Talla L</option>
+												<option>Talla XL</option>
 											</select>
 											<div class="dropDownSelect2"></div>
 										</div>
@@ -1514,7 +2188,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 									<div class="size-204 respon6-next">
 										<div class="rs1-select2 bor8 bg0">
 											<select class="js-select2" name="time">
-												<option>Choose an option</option>
+												<option>Elige una opción</option>
 												<option>Red</option>
 												<option>Blue</option>
 												<option>White</option>
@@ -1540,7 +2214,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										</div>
 
 										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-											Add to cart
+											Agregar al carrito
 										</button>
 									</div>
 								</div>	
@@ -1549,7 +2223,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 							<!--  -->
 							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
 								<div class="flex-m bor9 p-r-10 m-r-11">
-									<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
+									<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Agregar a favoritos">
 										<i class="zmdi zmdi-favorite"></i>
 									</a>
 								</div>
@@ -1627,7 +2301,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		$('.js-addwish-b2').each(function(){
 			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+				swal(nameProduct, "se agregó a favoritos", "success");
 
 				$(this).addClass('js-addedwish-b2');
 				$(this).off('click');
@@ -1638,7 +2312,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
 
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+				swal(nameProduct, "se agregó a favoritos", "success");
 
 				$(this).addClass('js-addedwish-detail');
 				$(this).off('click');
@@ -1650,7 +2324,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		$('.js-addcart-detail').each(function(){
 			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
+				swal(nameProduct, "se agregó al carrito", "success");
 			});
 		});
 	
@@ -1677,3 +2351,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 </body>
 </html>
+
+
+

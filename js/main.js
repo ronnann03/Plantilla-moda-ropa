@@ -54,24 +54,25 @@
     }
     
 
+    // El topbar es fixed en top:0; el navbar siempre queda debajo (top: posWrapHeader)
     if($(window).scrollTop() > posWrapHeader) {
         $(headerDesktop).addClass('fix-menu-desktop');
-        $(wrapMenu).css('top',0); 
-    }  
+        $(wrapMenu).css('top', posWrapHeader);
+    }
     else {
         $(headerDesktop).removeClass('fix-menu-desktop');
-        $(wrapMenu).css('top',posWrapHeader - $(this).scrollTop()); 
+        $(wrapMenu).css('top', posWrapHeader);
     }
 
-    $(window).on('scroll',function(){
+    $(window).on('scroll', function(){
         if($(this).scrollTop() > posWrapHeader) {
             $(headerDesktop).addClass('fix-menu-desktop');
-            $(wrapMenu).css('top',0); 
-        }  
+            $(wrapMenu).css('top', posWrapHeader);
+        }
         else {
             $(headerDesktop).removeClass('fix-menu-desktop');
-            $(wrapMenu).css('top',posWrapHeader - $(this).scrollTop()); 
-        } 
+            $(wrapMenu).css('top', posWrapHeader);
+        }
     });
 
 
@@ -130,29 +131,84 @@
     [ Isotope ]*/
     var $topeContainer = $('.isotope-grid');
     var $filter = $('.filter-tope-group');
+    var currentFilter = '*';
+    var searchQuery = '';
+    var priceMin = null;
+    var priceMax = null;
+    var sortBy = 'original-order';
+    var sortAscending = true;
+
+    function parsePriceFromText(text) {
+        var match = String(text || '').replace(',', '.').match(/(\d+(?:\.\d+)?)/g);
+        if (!match || match.length === 0) return null;
+        return Number(match[0]);
+    }
+
+    function parsePriceRangeFromText(text) {
+        var matches = String(text || '').replace(',', '.').match(/(\d+(?:\.\d+)?)/g);
+        if (!matches || matches.length === 0) return { min: null, max: null };
+        if (matches.length === 1) return { min: Number(matches[0]), max: null };
+        return { min: Number(matches[0]), max: Number(matches[1]) };
+    }
+
+    function applyIsotope() {
+        $topeContainer.isotope({
+            filter: function() {
+                var $item = $(this);
+                var matchesCategory = currentFilter === '*' ? true : $item.is(currentFilter);
+                if (!matchesCategory) return false;
+
+                var q = String(searchQuery || '').trim().toLowerCase();
+                if (q) {
+                    var name = $item.find('.js-name-b2').text().trim().toLowerCase();
+                    if (name.indexOf(q) === -1) return false;
+                }
+
+                if (priceMin !== null || priceMax !== null) {
+                    var priceText = $item.find('.stext-105').first().text();
+                    var price = parsePriceFromText(priceText);
+                    if (price === null) return false;
+                    if (priceMin !== null && price < priceMin) return false;
+                    if (priceMax !== null && price > priceMax) return false;
+                }
+
+                return true;
+            },
+            sortBy: sortBy,
+            sortAscending: sortAscending
+        });
+    }
 
     // filter items on button click
     $filter.each(function () {
         $filter.on('click', 'button', function () {
-            var filterValue = $(this).attr('data-filter');
-            $topeContainer.isotope({filter: filterValue});
+            currentFilter = $(this).attr('data-filter') || '*';
+            applyIsotope();
         });
         
     });
 
     // init Isotope
     $(window).on('load', function () {
-        var $grid = $topeContainer.each(function () {
+        $topeContainer.each(function () {
             $(this).isotope({
                 itemSelector: '.isotope-item',
                 layoutMode: 'fitRows',
                 percentPosition: true,
                 animationEngine : 'best-available',
-                masonry: {
-                    columnWidth: '.isotope-item'
+                getSortData: {
+                    price: function (itemElem) {
+                        var priceText = $(itemElem).find('.stext-105').first().text();
+                        var price = parsePriceFromText(priceText);
+                        return price === null ? 0 : price;
+                    },
+                    name: function (itemElem) {
+                        return $(itemElem).find('.js-name-b2').text().trim().toLowerCase();
+                    }
                 }
             });
         });
+        applyIsotope();
     });
 
     var isotopeButton = $('.filter-tope-group button');
@@ -165,6 +221,56 @@
 
             $(this).addClass('how-active1');
         });
+    });
+
+    $('.panel-search input[name="search-product"]').on('input', function() {
+        searchQuery = $(this).val();
+        applyIsotope();
+    });
+
+    $(document).on('click', '.panel-filter .filter-link', function(e) {
+        e.preventDefault();
+        var $link = $(this);
+        var text = $link.text().trim().toLowerCase();
+
+        if (text.indexOf('precio: menor a mayor') !== -1) {
+            sortBy = 'price';
+            sortAscending = true;
+        } else if (text.indexOf('precio: mayor a menor') !== -1) {
+            sortBy = 'price';
+            sortAscending = false;
+        } else if (text === 'predeterminado' || text === 'popularidad' || text === 'calificación promedio' || text === 'novedades') {
+            sortBy = 'original-order';
+            sortAscending = true;
+        } else if (text === 'todo') {
+            priceMin = null;
+            priceMax = null;
+        } else if (text.indexOf('+') !== -1 || text.indexOf('-') !== -1) {
+            var range = parsePriceRangeFromText(text);
+            priceMin = range.min;
+            priceMax = range.max;
+        }
+
+        $link.closest('ul').find('.filter-link').removeClass('filter-link-active');
+        $link.addClass('filter-link-active');
+        applyIsotope();
+    });
+
+    $(document).on('click', '[data-isotope-filter]', function(e) {
+        e.preventDefault();
+        var filterValue = $(this).attr('data-isotope-filter') || '*';
+        currentFilter = filterValue;
+
+        isotopeButton.removeClass('how-active1');
+        $filter.find('button[data-filter="' + filterValue + '"]').addClass('how-active1');
+        applyIsotope();
+
+        var productsEl = document.getElementById('productos');
+        if (productsEl && productsEl.scrollIntoView) productsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    $(document).on('click', 'a.js-show-cart, a.js-show-modal-search, a.js-show-modal1, a.js-addwish-b2, a.js-addwish-detail, a.js-noop', function(e) {
+        e.preventDefault();
     });
 
     /*==================================================================
@@ -277,6 +383,215 @@
         $('.js-modal1').removeClass('show-modal1');
     });
 
+    var applyLocale = function() {
+        var textReplacements = [
+            { from: /\bFree shipping for standard order over\b/g, to: 'Envío gratis por compras mayores a' },
+            { from: /\bYour Cart\b/g, to: 'Tu carrito' },
+            { from: /\bView Cart\b/g, to: 'Ver carrito' },
+            { from: /\bCheck Out\b/g, to: 'Finalizar compra' },
+            { from: /\bAdd to cart\b/g, to: 'Agregar al carrito' },
+            { from: /\bQuick View\b/g, to: 'Vista rápida' },
+            { from: /\bLoad More\b/g, to: 'Cargar más' },
+            { from: /\bShop Now\b/g, to: 'Comprar ahora' },
+            { from: /\bNEW SEASON\b/g, to: 'NUEVA TEMPORADA' },
+            { from: /\bNew arrivals\b/g, to: 'Nuevos ingresos' },
+            { from: /\bAll Products\b/g, to: 'Todos' },
+            { from: /\bProduct Overview\b/g, to: 'Catálogo de productos' },
+            { from: /\bCategories\b/g, to: 'Categorías' },
+            { from: /\bGET IN TOUCH\b/g, to: 'Contacto' },
+            { from: /\bHelp & FAQs\b/g, to: 'Ayuda y FAQ' },
+            { from: /\bMy Account\b/g, to: 'Mi cuenta' },
+            { from: /\bTrack Order\b/g, to: 'Seguir pedido' },
+            { from: /\bReturns\b/g, to: 'Devoluciones' },
+            { from: /\bShipping\b/g, to: 'Envíos' },
+            { from: /\bFAQs\b/g, to: 'Preguntas frecuentes' },
+            { from: /\bContinue Reading\b/g, to: 'Seguir leyendo' },
+            { from: /\bShoping Cart\b/g, to: 'Carrito' },
+            { from: /\bProduct Detail\b/g, to: 'Detalle del producto' },
+            { from: /\bBlog Detail\b/g, to: 'Detalle del blog' },
+            { from: /\bProduct\b/g, to: 'Producto' },
+            { from: /\bHome\b/g, to: 'Inicio' },
+            { from: /\bHomepage\b/g, to: 'Inicio' },
+            { from: /\bShop\b/g, to: 'Tienda' },
+            { from: /\bFeatures\b/g, to: 'Carrito' },
+            { from: /\bAbout\b/g, to: 'Nosotros' },
+            { from: /\bContact\b/g, to: 'Contacto' },
+            { from: /\bWomen\b/g, to: 'Mujer' },
+            { from: /\bMen\b/g, to: 'Hombre' },
+            { from: /\bAccessories\b/g, to: 'Accesorios' },
+            { from: /\bShoes\b/g, to: 'Calzado' },
+            { from: /\bWatches\b/g, to: 'Relojes' },
+            { from: /\bBag\b/g, to: 'Bolsos' },
+            { from: /\bSearch\.\.\.\b/g, to: 'Buscar...' },
+            { from: /\bSearch\b/g, to: 'Buscar' },
+            { from: /\bFilter\b/g, to: 'Filtrar' },
+            { from: /\bSort By\b/g, to: 'Ordenar por' },
+            { from: /\bDefault\b/g, to: 'Predeterminado' },
+            { from: /\bPopularity\b/g, to: 'Popularidad' },
+            { from: /\bAverage rating\b/g, to: 'Calificación promedio' },
+            { from: /\bNewness\b/g, to: 'Novedades' },
+            { from: /\bPrice: Low to High\b/g, to: 'Precio: menor a mayor' },
+            { from: /\bPrice: High to Low\b/g, to: 'Precio: mayor a menor' },
+            { from: /\bPrice\b/g, to: 'Precio' },
+            { from: /\bColor\b/g, to: 'Color' },
+            { from: /\bBlack\b/g, to: 'Negro' },
+            { from: /\bWhite\b/g, to: 'Blanco' },
+            { from: /\bGrey\b/g, to: 'Gris' },
+            { from: /\bBlue\b/g, to: 'Azul' },
+            { from: /\bRed\b/g, to: 'Rojo' },
+            { from: /\bAll rights reserved\b/g, to: 'Todos los derechos reservados' },
+            { from: /\bMade with\b/g, to: 'Hecho con' },
+            { from: /\bdistributed by\b/g, to: 'distribuido por' }
+        ];
+
+        var replaceText = function(text) {
+            var result = text;
+            result = result.replace(/\bUSD\b/g, 'PEN');
+            result = result.replace(/\bEN\b/g, 'ES');
+            result = result.replace(/\$\s*(\d)/g, 'S/ $1');
+            for (var i = 0; i < textReplacements.length; i++) {
+                result = result.replace(textReplacements[i].from, textReplacements[i].to);
+            }
+            return result;
+        };
+
+        if (typeof document !== 'undefined' && document.body && document.createTreeWalker) {
+            var walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode: function(node) {
+                        if (!node || !node.nodeValue) return NodeFilter.FILTER_REJECT;
+                        if (!/\S/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+                        var parent = node.parentNode;
+                        if (!parent) return NodeFilter.FILTER_REJECT;
+                        var tag = parent.nodeName;
+                        if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT') return NodeFilter.FILTER_REJECT;
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                }
+            );
+
+            var n;
+            while ((n = walker.nextNode())) {
+                var updated = replaceText(n.nodeValue);
+                if (updated !== n.nodeValue) n.nodeValue = updated;
+            }
+        }
+
+        $('input[placeholder], textarea[placeholder]').each(function(){
+            var $el = $(this);
+            var ph = $el.attr('placeholder');
+            if (!ph) return;
+            var next = replaceText(ph);
+            if (next !== ph) $el.attr('placeholder', next);
+        });
+    };
+
+    $(function() {
+        applyLocale();
+
+        var setupReveal = function() {
+            var $els = $('[data-reveal]');
+            if ($els.length === 0) return;
+
+            $els.each(function() {
+                var delay = $(this).attr('data-delay');
+                if (delay !== undefined && delay !== null && delay !== '') {
+                    this.style.transitionDelay = String(delay) + 'ms';
+                }
+            });
+
+            if (!('IntersectionObserver' in window)) {
+                $els.addClass('is-visible');
+                return;
+            }
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+            $els.each(function() { observer.observe(this); });
+        };
+
+        var setupCounters = function() {
+            var $counters = $('.about-counter[data-count]');
+            if ($counters.length === 0) return;
+
+            var animateCounter = function(el) {
+                if (el.dataset && el.dataset.animated === 'true') return;
+                if (el.dataset) el.dataset.animated = 'true';
+
+                var target = Number(el.getAttribute('data-count') || '0');
+                var suffix = el.getAttribute('data-suffix') || '';
+                var duration = 1200;
+                var start = null;
+
+                var tick = function(ts) {
+                    if (!start) start = ts;
+                    var p = Math.min((ts - start) / duration, 1);
+                    var eased = 1 - Math.pow(1 - p, 3);
+                    var value = Math.round(target * eased);
+                    el.textContent = value.toLocaleString('es-PE') + suffix;
+                    if (p < 1) requestAnimationFrame(tick);
+                };
+
+                requestAnimationFrame(tick);
+            };
+
+            if (!('IntersectionObserver' in window)) {
+                $counters.each(function() { animateCounter(this); });
+                return;
+            }
+
+            var counterObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) return;
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                });
+            }, { threshold: 0.2 });
+
+            $counters.each(function() { counterObserver.observe(this); });
+        };
+
+        setupReveal();
+        setupCounters();
+
+        /* Contact form */
+        $('#contactForm').on('submit', function(e) {
+            e.preventDefault();
+            var $form = $(this);
+            var $msg  = $form.find('.contact-form-msg');
+            var name  = $form.find('[name="name"]').val().trim();
+            var email = $form.find('[name="email"]').val().trim();
+            var message = $form.find('[name="message"]').val().trim();
+
+            if (!name || !email || !message) {
+                $msg.removeClass('success').addClass('error')
+                    .text('Por favor completá los campos obligatorios (*).')
+                    .show();
+                return;
+            }
+
+            var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRe.test(email)) {
+                $msg.removeClass('success').addClass('error')
+                    .text('Ingresá un correo válido.')
+                    .show();
+                return;
+            }
+
+            $msg.removeClass('error').addClass('success')
+                .text('¡Mensaje enviado! Te responderemos pronto.')
+                .show();
+            $form[0].reset();
+        });
+    });
 
 
 })(jQuery);
