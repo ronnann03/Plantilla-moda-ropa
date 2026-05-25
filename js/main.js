@@ -373,13 +373,24 @@
     });
     
     /*==================================================================
-    [ Show modal1 ]*/
-    $('.js-show-modal1').on('click',function(e){
+    [ Show modal1 — inyecta imagen, nombre y precio de la card clickeada ]*/
+    $('.js-show-modal1').on('click', function(e) {
         e.preventDefault();
+
+        var $card  = $(this).closest('.block2');
+        var imgSrc = $card.find('.block2-pic img').first().attr('src') || '';
+        var name   = $card.find('.js-name-b2').text().trim();
+        var price  = $card.find('.stext-105').text().trim();
+
+        // Inyectar datos en el modal
+        $('#modal1-img').attr('src', imgSrc).attr('alt', name);
+        $('.js-name-detail').text(name);
+        $('.js-price-detail').text(price);
+
         $('.js-modal1').addClass('show-modal1');
     });
 
-    $('.js-hide-modal1').on('click',function(){
+    $('.js-hide-modal1').on('click', function() {
         $('.js-modal1').removeClass('show-modal1');
     });
 
@@ -593,5 +604,193 @@
         });
     });
 
+
+
+    /* ================================================================
+       CARRITO FUNCIONAL + WISHLIST + TOAST
+       ================================================================ */
+    var CART_KEY = 'coza_cart';
+    var WISH_KEY = 'coza_wish';
+
+    /* --- localStorage helpers --- */
+    function getCart() {
+        try { return JSON.parse(localStorage.getItem(CART_KEY) || '[]'); } catch(e) { return []; }
+    }
+    function getWish() {
+        try { return JSON.parse(localStorage.getItem(WISH_KEY) || '[]'); } catch(e) { return []; }
+    }
+    function saveCart(c) { localStorage.setItem(CART_KEY, JSON.stringify(c)); }
+    function saveWish(w) { localStorage.setItem(WISH_KEY, JSON.stringify(w)); }
+
+    /* --- actualizar badge del carrito --- */
+    function updateCartBadge() {
+        var total = getCart().reduce(function(s, i) { return s + i.qty; }, 0);
+        $('.js-show-cart').attr('data-notify', total > 0 ? total : '0');
+    }
+
+    /* --- actualizar badge de favoritos --- */
+    function updateWishBadge() {
+        var count = getWish().length;
+        $('.icon-header-noti').not('.js-show-cart').attr('data-notify', count > 0 ? count : '0');
+    }
+
+    /* --- sistema de toasts --- */
+    function showToast(msg, type) {
+        if ($('#coza-toasts').length === 0) {
+            $('body').append('<div id="coza-toasts"></div>');
+        }
+        var $t = $('<div class="coza-toast">' + (type === 'wish' ? '❤️' : '🛒') + ' ' + msg + '</div>');
+        $('#coza-toasts').append($t);
+        setTimeout(function() { $t.addClass('coza-toast--show'); }, 20);
+        setTimeout(function() {
+            $t.removeClass('coza-toast--show');
+            setTimeout(function() { $t.remove(); }, 400);
+        }, 3200);
+    }
+
+    /* --- renderizar panel del carrito --- */
+    function renderCart() {
+        var cart = getCart();
+        var $list  = $('#cart-items-list');
+        var $empty = $('#cart-empty-msg');
+        var $total = $('#cart-total-text');
+        $list.empty();
+
+        if (cart.length === 0) {
+            $empty.show();
+            $total.text('S/ 0.00');
+            updateCartBadge();
+            return;
+        }
+        $empty.hide();
+
+        var total = 0;
+        $.each(cart, function(_, item) {
+            total += item.price * item.qty;
+            $list.append(
+                '<li class="header-cart-item flex-w flex-t m-b-12" data-id="' + item.id + '">' +
+                    '<div class="header-cart-item-img">' +
+                        '<img src="' + item.img + '" alt="' + item.name + '">' +
+                    '</div>' +
+                    '<div class="header-cart-item-txt p-t-8">' +
+                        '<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">' + item.name + '</a>' +
+                        '<span class="header-cart-item-info">' + item.qty + ' x S/ ' + item.price.toFixed(2) + '</span>' +
+                    '</div>' +
+                    '<button class="cart-item-remove js-remove-cart-item" data-id="' + item.id + '" title="Eliminar">×</button>' +
+                '</li>'
+            );
+        });
+
+        $total.text('S/ ' + total.toFixed(2));
+        updateCartBadge();
+    }
+
+    /* --- añadir producto al carrito --- */
+    function addToCart(img, name, priceStr, qty) {
+        var price = parseFloat(String(priceStr).replace(/[^0-9.,]/g, '').replace(',', '.')) || 0;
+        var id = name.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
+        var cart = getCart();
+        var found = false;
+        $.each(cart, function(_, item) {
+            if (item.id === id) { item.qty += qty; found = true; return false; }
+        });
+        if (!found) { cart.push({ id: id, img: img, name: name, price: price, qty: qty }); }
+        saveCart(cart);
+        renderCart();
+        showToast('"' + name + '" agregado al carrito', 'cart');
+        $('.js-panel-cart').addClass('show-header-cart');
+    }
+
+    /* --- toggle favorito --- */
+    function toggleWish($btn, img, name) {
+        var id = name.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
+        var wish = getWish();
+        var idx = -1;
+        $.each(wish, function(i, w) { if (w.id === id) { idx = i; return false; } });
+
+        if (idx === -1) {
+            wish.push({ id: id, img: img, name: name });
+            saveWish(wish);
+            if ($btn && $btn.length) $btn.addClass('is-wishlisted');
+            showToast('"' + name + '" guardado en favoritos', 'wish');
+        } else {
+            wish.splice(idx, 1);
+            saveWish(wish);
+            if ($btn && $btn.length) $btn.removeClass('is-wishlisted');
+            showToast('"' + name + '" eliminado de favoritos', 'wish');
+        }
+        updateWishBadge();
+    }
+
+    /* --- restaurar estado de wishlist al cargar --- */
+    function initWishlistState() {
+        var wish = getWish();
+        if (wish.length === 0) return;
+        var ids = wish.map(function(w) { return w.id; });
+        $('.js-addwish-b2').each(function() {
+            var name = $(this).closest('.block2').find('.js-name-b2').text().trim();
+            var id = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
+            if (ids.indexOf(id) !== -1) $(this).addClass('is-wishlisted');
+        });
+    }
+
+    /* --- EVENTOS --- */
+
+    // Agregar al carrito desde el modal
+    $(document).on('click', '.js-addcart-detail', function(e) {
+        e.preventDefault();
+        var img   = $('#modal1-img').attr('src') || '';
+        var name  = $('.js-name-detail').text().trim();
+        var price = $('.js-price-detail').text().trim();
+        var qty   = parseInt($('.num-product').val(), 10) || 1;
+        if (!name) return;
+        addToCart(img, name, price, qty);
+    });
+
+    // Eliminar ítem del carrito
+    $(document).on('click', '.js-remove-cart-item', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var id = String($(this).data('id'));
+        var cart = getCart().filter(function(i) { return i.id !== id; });
+        saveCart(cart);
+        renderCart();
+    });
+
+    // Wishlist en cards del catálogo
+    $(document).on('click', '.js-addwish-b2', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $card = $(this).closest('.block2');
+        var img   = $card.find('.block2-pic img').first().attr('src') || '';
+        var name  = $card.find('.js-name-b2').text().trim();
+        toggleWish($(this), img, name);
+    });
+
+    // Wishlist desde el modal de detalle
+    $(document).on('click', '.js-addwish-detail', function(e) {
+        e.preventDefault();
+        var img  = $('#modal1-img').attr('src') || '';
+        var name = $('.js-name-detail').text().trim();
+        if (!name) return;
+        // Sincronizar corazón con la card correspondiente
+        var $cardBtn = null;
+        $('.js-name-b2').each(function() {
+            if ($(this).text().trim() === name) {
+                $cardBtn = $(this).closest('.block2').find('.js-addwish-b2');
+                return false;
+            }
+        });
+        toggleWish($cardBtn, img, name);
+    });
+
+    /* --- INIT --- */
+    $(function() {
+        if ($('#coza-toasts').length === 0) {
+            $('body').append('<div id="coza-toasts"></div>');
+        }
+        renderCart();
+        initWishlistState();
+    });
 
 })(jQuery);
